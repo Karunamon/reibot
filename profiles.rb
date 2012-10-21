@@ -1,3 +1,4 @@
 class Profiles
-  # To change this template use File | Settings | File Templates.
+  include Cinch::Plugin
+
 end
