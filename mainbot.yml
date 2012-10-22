@@ -1,0 +1,9 @@
+:server: frogbox.es
+:nick: Rei
+:channels:
+ - '#TKWare'
+:user: Ayanami
+:plugins:
+ :plugins:
+  - 'Hello'
+  - 'Profiles'

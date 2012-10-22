@@ -1,30 +1,14 @@
+#noinspection RubyResolve
+$my_version="0.1a"
 require 'cinch'
 require_relative 'hello'
-require_relative 'config'
+require_relative 'profiles'
 
-#my_version="0.1a"
-#my_env="dev"
+configfile = File.read('mainbot.yml')
 
-metabot = Cinch::Bot.new do
-  configure do |c|
+#Init the bot with our main config
+metabot    = Cinch::Bot.new
+metabot.config.load(YAML.load(configfile))
 
-    #noinspection RubyResolve
-    c.server          = configatron.irc.server
-    #noinspection RubyResolve,RubyLiteralArrayInspection
-    c.channels        = ["#TKWare"]
-    c.user            = configatron.irc.username
-    c.nick            = configatron.irc.nick
-    #noinspection RubyResolve
-    c.plugins.plugins = [Hello]
-    #Name check
-    #if my_env == "dev" then c.nick = "[Rei|Dev]"
-    #elsif my_env == "prod" then c.nick = "[Rei]"
-    #end
-  end
-
-#Do things here
-end
-
+#Boot up
 metabot.start
-
-

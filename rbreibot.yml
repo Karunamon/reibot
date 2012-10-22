@@ -1,0 +1,25 @@
+#Reibot Configuration
+
+##IRC
+:server: frogbox.es
+:nick: Rei
+:channels:
+ - '#TKWare'
+##bot's username
+:user: Ayanami
+
+#Bot
+:environment: dev
+
+#Owner
+:owner: TK
+:masterpass: Shenanigans87
+
+#Database
+:profilesfile: Profiles.db3
+:profilesschema: ProfilesSchema.db3
+
+#Plugins (class name, NOT file name!)
+:plugins:
+ - Hello
+ - Profiles

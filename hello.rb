@@ -2,14 +2,16 @@ require 'cinch'
 class Hello
   include Cinch::Plugin
 
-  $greetings=["Hello", "Guten tag", "Hola", "Moshimoshi", "Sup", "How's it hangin?", "Word"]
+  @greetings=["Hello", "Guten tag", "Hola", "Moshimoshi", "Sup", "How's it hangin?", "Word", "Top o' the day to ya", "Namaste"]
 
-  #So this is how you assign a hash...
+  def self.random_hello
+    @greetings.sample
+  end
+
   match("hello", :prefix => "")
 
-
   def execute(m)
-    m.reply "#{$greetings.sample}, #{m.user.nick}!"
+    m.reply "#{Hello.random_hello}, #{m.user.nick}!"
   end
 
 end
