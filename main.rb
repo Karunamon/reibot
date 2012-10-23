@@ -1,8 +1,9 @@
-#noinspection RubyResolve
-$my_version="0.1a"
+#my_version="0.1a"
 require 'cinch'
-require_relative 'hello'
-require_relative 'profiles'
+#Load plugins
+Dir.glob(File.expand_path("../Plugins/*.rb", __FILE__)).each do |file|
+  require file
+end
 
 configfile = File.read('mainbot.yml')
 
