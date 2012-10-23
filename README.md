@@ -5,9 +5,21 @@ RBReibot is a continuation of Reibot, an IRC bot project which was originally wr
 
 Why Ruby?
 =========
-* mIRC's scripting syntax is very capable, but it is terribly verbose and is completely procedural. Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem). mIRC has nothing resembling an IDE, all work is done essentially inside a dumb text editor, with a third party IDE laoded for syntax editing. Not terribly fun.
+* mIRC's scripting syntax is very capable, but it is terribly verbose and is completely procedural.
 
-* mIRC's stability isn't great. On a virtual machine dedicated to running the program, it would reliably crash given about a week. Migrating to Ruby makes the bot truly cross-platform, also allowing us to migrate to Linux at the same time.
+ * Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
+
+
+
+* mIRC has nothing resembling an IDE, all work is done essentially inside a dumb text editor, with a third party DLL loaded for syntax editing. Not terribly fun.
+
+ * RubyMine? NetBeans? Pick your favorite :)
+
+
+
+* mIRC's stability isn't great. On a virtual machine dedicated to running the program, it would reliably crash given about a week.
+
+ * Migrating to Ruby makes the bot truly cross-platform, also allowing us to migrate to Linux at the same time.
 
 
 Features
