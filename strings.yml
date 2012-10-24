@@ -1,0 +1,47 @@
+#Strings File - Various things the bot says
+
+#Use no ending punctuation - those will be added in the appropriate context
+
+greetings:
+ - "Hello"
+ - "Guten tag"
+ - "Hola"
+ - "Moshimoshi"
+ - "Sup"
+ - "How's it hangin"
+ - "Word"
+ - "Top o' the day to ya"
+ - "Namaste"
+
+acknowledgements:
+ - "Got it"
+ - "Understood"
+ - "On it"
+ - "Acknowleged"
+ - "Mission accepted"
+ - "Ja"
+ - "Working on it"
+
+denials:
+ - "Nope"
+ - "No way"
+ - "Forget it"
+ - "Not happening"
+
+#These should be full sentences, punctuation and all
+kicks:
+ - "GTFO."
+ - "Get lost."
+ - "Your behavior is not conducive to the desired environment."
+ - "Any other morons? Don't be shy, speak up!"
+ - "Leave."
+ - "Your mother."
+ - "Go away."
+ - "Who let the idiots in?"
+ - "Take this time to think about what you've done."
+ - "This is going to hurt you a lot more than it hurts me.."
+ - "Oops!"
+ - "Go take a long walk off a short pier."
+ - "Wow I really launched that one!"
+
+
