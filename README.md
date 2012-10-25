@@ -7,25 +7,25 @@ Why Ruby?
 =========
 * mIRC's scripting syntax is very capable, but it is terribly verbose and is completely procedural.
 
- * Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
+  * Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
 
 
 
 * mIRC has nothing resembling an IDE, all work is done essentially inside a dumb text editor, with a third party DLL loaded for syntax editing. Not terribly fun.
 
- * RubyMine? NetBeans? Pick your favorite :)
+  * RubyMine? NetBeans? Pick your favorite :)
 
 
 
 * mIRC's stability isn't great. On a virtual machine dedicated to running the program, it would reliably crash given about a week.
 
- * Migrating to Ruby makes the bot truly cross-platform, also allowing us to migrate to Linux at the same time.
+  * Migrating to Ruby makes the bot truly cross-platform, also allowing us to migrate to Linux at the same time.
 
 
 Features
 ========
 
-* Note System (in development)
+* Note System
 
 The note system allows you to leave notes for users who are not active or even offline. The next time a user joins the bot's channel (or speaks, if they never left), the bot will deliver all messages a person has waiting for them. This is a godsend on busy channels :)
 
@@ -66,13 +66,15 @@ Requirements
 ============
 
 * Ruby 1.9.2
-* ActiveRecord
+* Rails
 * Cinch
 * sqlite3
 
-Those final three are just ruby gems. If your system is set up sanely, you can do:
+* If you have the Bundler gem installed, you can run
 
-    $gem install activerecord cinch sqlite3
+    $bundle install
+
+ .. and all dependencies will be automatically patched
 
 Getting Started
 ===============
@@ -80,6 +82,8 @@ Getting Started
 * Edit rbreibot.yml to change the bot's name, channels to join, etc. Note that this is a YAML formatted file, whitespace matters! If you get a startup error, try pasting the entire contents of the file into something like https://yaml-online-parser.appspot.com/ to see if the file reads.
 
 If you can't figure it out still, open an issue here and we'll get you sorted out.
+
+* Run `rake db:migrate` to generate the initial database
 
 * Run main.rb to start! ReiBot should join the channel you specified and become available for use.
 
