@@ -1,5 +1,5 @@
 development:
   adapter: sqlite3
-  database: db/development.db3
+  database: db/reibot.db3
   pool: 5
   timeout: 5000

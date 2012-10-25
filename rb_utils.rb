@@ -1,5 +1,7 @@
 require 'yaml'
+require 'active_record'
 module RbUtils
+  #noinspection RubyResolve
   STRINGS=(YAML.load(File.read('strings.yml')))
 
   def greeting
