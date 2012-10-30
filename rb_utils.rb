@@ -20,8 +20,13 @@ module RbUtils
     STRINGS.fetch('kicks').to_a.sample
   end
 
+  def wait_string
+    STRINGS.fetch('waits').to_a.sample
+  end
+
   #We're going to need to strip the first item from a line of text rather often
   def without_cmd(incoming)
     incoming.split(" ").delete_at(0)
+    incoming
   end
 end

@@ -28,6 +28,13 @@ denials:
  - "Forget it"
  - "Not happening"
 
+waits:
+ - "Just a sec"
+ - "One moment"
+ - "Hold on"
+ - "Let me get that"
+
+
 #These should be full sentences, punctuation and all
 kicks:
  - "GTFO."

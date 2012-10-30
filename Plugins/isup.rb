@@ -8,7 +8,7 @@ class Isup
   match(/isup.*/, :prefix => "?", method: :upcheck)
 
   def upcheck(m)
-    m.reply ack_string
+    m.reply wait_string
     message  = m.message.split(" ")
     response = fetch("http://isup.me/" + message[1]).body.inspect
     if /not just you/ =~ response
