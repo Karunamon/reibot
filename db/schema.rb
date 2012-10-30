@@ -11,13 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024044524) do
+ActiveRecord::Schema.define(:version => 20121026030251) do
+
+  create_table "lines", :force => true do |t|
+    t.integer "profile_id"
+    t.string "data", :limit => 510
+  end
 
   create_table "notes", :force => true do |t|
     t.datetime "timeset"
     t.string "sender"
     t.string "recipient"
     t.string "text"
+  end
+
+  create_table "owners", :force => true do |t|
+    t.string "name", :limit => 100
+    t.string "netmasks", :limit => 100
+    t.string "password", :limit => 100
+    t.string "privileges", :limit => 100
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string "title", :limit => 100
+    t.integer "owner"
+    t.datetime "timeset"
+    t.string "whoset"
   end
 
 end

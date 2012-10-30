@@ -1,5 +1,7 @@
 development:
-  adapter: sqlite3
-  database: db/reibot.db3
+  adapter: postgresql
+  database: reibot
+  username: postgres
+  password: Shenanigans87
   pool: 5
   timeout: 5000

@@ -1,25 +1,25 @@
 class ProfilesInitial < ActiveRecord::Migration
   def up
-    execute "CREATE TABLE profile_owners (
-     id         INTEGER         PRIMARY KEY AUTOINCREMENT NOT NULL,
-     name       VARCHAR( 100 )  COLLATE 'NOCASE',
-     netmasks   VARCHAR( 100 )  COLLATE 'NOCASE',
+    execute "CREATE TABLE owners (
+     id         SERIAL         PRIMARY KEY NOT NULL,
+     name       VARCHAR( 100 ),
+     netmasks   VARCHAR( 100 ),
      password   VARCHAR( 100 ),
      privileges VARCHAR( 100 )
 );"
-    execute "CREATE TABLE profile_meta (
-      id        INTEGER         PRIMARY KEY AUTOINCREMENT NOT NULL,
-      title     VARCHAR( 100 )  COLLATE 'NOCASE',
+    execute "CREATE TABLE profiles (
+      id        SERIAL         PRIMARY KEY  NOT NULL,
+      title     VARCHAR( 100 ),
       owner     INTEGER,
-      timeset   DATETIME,
-      whoset    VARCHAR( 255 )  COLLATE 'NOCASE',
-      FOREIGN KEY (owner) REFERENCES profile_owners(id)
+      timeset   TIMESTAMP,
+      whoset    VARCHAR( 255 ),
+      FOREIGN KEY (owner) REFERENCES owners(id)
 );"
-    execute "CREATE TABLE profile_data (
-    id          INTEGER        PRIMARY KEY AUTOINCREMENT,
+    execute "CREATE TABLE lines (
+    id          SERIAL        PRIMARY KEY,
     profile_id  INTEGER,
     data      VARCHAR( 510 ),
-    FOREIGN KEY (profile_id) REFERENCES profile_meta(id)
+    FOREIGN KEY (profile_id) REFERENCES profiles(id)
 );"
   end
 
