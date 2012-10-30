@@ -26,7 +26,7 @@ class Memobox
   def leave_message(m)
     msgarray = without_cmd(m.message)
     @notes_waiting.push(msgarray[0])
-    Memobox::Note.create(#TODO: Need a way to make this case insensitive so a db besides SQLIte can be used
+    Note.create(#TODO: Need a way to make this case insensitive so a db besides SQLIte can be used
         :timeset   => (Time.new).ctime,
         :sender    => m.user.nick,
         :recipient => msgarray.shift, #Grab that first item and shift down, now we just have the message text
@@ -37,7 +37,7 @@ class Memobox
 
   def check_notes(m)
     if @notes_waiting.grep(/^#{m.user.nick}/i).count > 0
-      notescount= Note.find_all_by_recipient("#{m.user.nick}").count
+      notescount= Note.where(:recipient => "#{m.user.nick}").count
       if notescount > 1 then
         msgword="messages"
       else
@@ -50,7 +50,7 @@ class Memobox
 
   def retrieve_notes(m)
     @notes_waiting.delete("#{m.user.nick.downcase}")
-    Note.find_all_by_recipient("#{m.user.nick}").each do |item|
+    Note.where(:recipient => "#{m.user.nick}").each do |item|
       m.reply "#{item[:sender]} // #{item[:text]}"
       Note.delete(item[:id])
     end
@@ -58,5 +58,6 @@ class Memobox
 
   def on_connect(m)
     @notes_waiting = Array.new
+    @thing         = m #To shut up the IDE :)
   end
 end

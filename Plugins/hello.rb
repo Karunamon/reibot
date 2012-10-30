@@ -6,6 +6,6 @@ class Hello
   match("hello", :prefix => "")
 
   def execute(m)
-    m.reply "#{greeting}, #{m.user.nick}!"
+    m.reply "#{greet_string}, #{m.user.nick}!"
   end
 end

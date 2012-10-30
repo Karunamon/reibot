@@ -16,7 +16,6 @@ dbconfig=YAML.load(File.read('db/config.yml'))
 #metabot.loggers.first.level = :info
 
 #Database link
-
 ActiveRecord::Base.establish_connection(
     dbconfig["development"]
 )
