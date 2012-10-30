@@ -2,9 +2,11 @@
 :nick: Rei
 :channels:
  - '#TKWare'
+ - '#Deviant'
 :user: Ayanami
 :plugins:
  :plugins:
   - 'Hello'
   - 'Profiles'
   - 'Memobox'
+  - 'Isup'
