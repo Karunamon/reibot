@@ -26,7 +26,8 @@ module RbUtils
 
   #We're going to need to strip the first item from a line of text rather often
   def without_cmd(incoming)
-    incoming.split(" ").delete_at(0)
-    incoming
+    reply = incoming.split(" ")
+    reply.delete_at(0)
+    reply
   end
 end
