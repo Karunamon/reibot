@@ -13,13 +13,11 @@ class ProfilesInitial < ActiveRecord::Migration
       owner     INTEGER,
       timeset   TIMESTAMP,
       whoset    VARCHAR( 255 ),
-      FOREIGN KEY (owner) REFERENCES owners(id)
 );"
     execute "CREATE TABLE lines (
     id          SERIAL        PRIMARY KEY,
     profile_id  INTEGER,
     data      VARCHAR( 510 ),
-    FOREIGN KEY (profile_id) REFERENCES profiles(id)
 );"
   end
 
