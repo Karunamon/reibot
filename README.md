@@ -37,7 +37,7 @@ The note system allows you to leave notes for users who are not active or even o
     <ReiBot> You, 2012-10-22 07:00:00 MST> Hey remember to check the status of the Gonkulator when you get back, thanks!
 
 
-* Definitions System (in development)
+* Definitions System
 
 The definitions system allows you to store and retrieve data to arbitrary entries. In Reibot's home server, this functionality is used to store character profiles for role playing purposes. Any information can be stored though - think of anything you need to display repetitively, such as channel rules, or the address for your clan's TF2 server, or a particularly funny quote that someone has inadvertently made...
 
