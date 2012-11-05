@@ -1,6 +1,5 @@
 require 'cinch'
 require 'active_record'
-require 'pry'
 require_relative '../rb_utils'
 
 
@@ -18,18 +17,19 @@ class Memobox
 
   #########
 
-  #Set up the database access object
+  #Model#
   class Note < ActiveRecord::Base
   end
 
 
+  #Methods#
   def leave_message(m)
     msgarray = without_cmd(m.message)
     @notes_waiting.push(msgarray[0])
     Note.create(#TODO: Need a way to make this case insensitive so a db besides SQLIte can be used
         :timeset   => (Time.new).ctime,
         :sender    => m.user.nick,
-        :recipient => msgarray.shift, #Grab that first item and shift down, now we just have the message text
+        :recipient => msgarray.shift,
         :text      => msgarray.join(" ")
     )
     m.reply "#{ack_string}, #{m.user.nick}!"
@@ -57,7 +57,6 @@ class Memobox
   end
 
   def on_connect(m)
-    @notes_waiting = Array.new
-    @thing         = m #To shut up the IDE :)
+    @notes_waiting = Array.new #We set up an array for message checking so every line of text doesn't result in a database call
   end
 end

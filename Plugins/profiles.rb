@@ -1,6 +1,5 @@
 require 'cinch'
 require 'active_record'
-require 'pry'
 #require 'bcrypt'
 require_relative '../rb_utils'
 
@@ -15,7 +14,7 @@ class Profiles
   match(/^\?detail /i, :prefix => "", method: :detail_profile)
 
 
-  #DB Models#
+  #Models#
   class Owner < ActiveRecord::Base
     has_many :profiles
   end
@@ -29,7 +28,7 @@ class Profiles
     belongs_to :profiles
   end
 
-  #Assorted utility methods
+  #Methods#
 
   def has_owner?(nick)
     Owner.find_all_by_name(nick).any?
@@ -52,7 +51,7 @@ class Profiles
   def add_profile(m)
     msgarray = without_cmd(m.message)
     item     = msgarray[0]
-    if has_owner?(m.user.nick) #Check to see if this user exists already, create one if not.
+    if has_owner?(m.user.nick)
       @owner = Owner.find_all_by_name(m.user.nick)[0]
     else
       @owner = Owner.create(:name => m.user.nick)
@@ -94,7 +93,7 @@ class Profiles
       unless gotprofile.any?
         raise "No profile found"
       end
-      m.reply "#{deny_string}, #{m.user.nick}!" unless can_modify?(m.user.nick) #Bail out with an error if they don't have rights
+      m.reply "#{deny_string}, #{m.user.nick}!" unless can_modify?(m.user.nick)
       return unless can_modify?(m.user.nick)
       gotprofile[0].destroy
       m.reply "Deleted #{msgarray[0]}."
