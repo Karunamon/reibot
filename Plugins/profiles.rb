@@ -78,7 +78,7 @@ class Profiles
       unless gotprofile.any?
         raise "No profile found"
       end
-      m.reply "#{msgarray[0]}:"
+      #m.reply "#{msgarray[0]}:"  #Removed by request
       Line.find_all_by_profile_id(gotprofile[0].id).each do |item|
         m.reply item.data
       end
