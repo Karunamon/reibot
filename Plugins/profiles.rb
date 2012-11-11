@@ -9,7 +9,7 @@ class Profiles
   ##Listeners##
 
   match(/(^\?learn |^\?save |^\?remember |^\?store )/i, :prefix => "", method: :add_profile)
-  match(/(^\?\? |^who is |^what is )/i, :prefix => "", method: :query_profile)
+  match(/(^\?\? )/i, :prefix => "", method: :query_profile)
   match(/(^\?forget |^\?delete |^\?erase |^\?drop)/i, :prefix => "", method: :delete_profile)
   match(/^\?detail /i, :prefix => "", method: :detail_profile)
 
