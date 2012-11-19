@@ -10,14 +10,14 @@ class ProfilesInitial < ActiveRecord::Migration
     execute "CREATE TABLE profiles (
       id        SERIAL         PRIMARY KEY  NOT NULL,
       title     VARCHAR( 100 ),
-      owner     INTEGER,
+      owner     INTEGER REFERENCES owners (id),
       timeset   TIMESTAMP,
-      whoset    VARCHAR( 255 ),
+      whoset    VARCHAR( 255 )
 );"
     execute "CREATE TABLE lines (
     id          SERIAL        PRIMARY KEY,
-    profile_id  INTEGER,
-    data      VARCHAR( 510 ),
+    profile_id  INTEGER REFERENCES profiles (id),
+    data      VARCHAR( 510 )
 );"
   end
 
