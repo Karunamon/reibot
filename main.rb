@@ -9,15 +9,19 @@ end
 #Init the bot with our main config
 metabot=Cinch::Bot.new
 metabot.config.load(YAML.load(File.read('main.yml')))
-dbconfig=YAML.load(File.read('config/database.yml'))
+dbconfig=YAML.load(File.read('db/config.yml'))
 #For production use
 #metabot.loggers << Cinch::Logger::FormattedLogger.new(File.open("Logs/metabot.log", "a"))
 #metabot.loggers.level = :debug
 #metabot.loggers.first.level = :info
 
 #Database link
-ActiveRecord::Base.establish_connection(
-    dbconfig
-)
+
+if ENV['DATABASE_URL']
+	ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+else
+	ActiveRecord::Base.establish_connection(dbconfig['development'])
+end
+
 #Boot up
 metabot.start
