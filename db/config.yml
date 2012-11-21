@@ -1,7 +1,9 @@
 development:
   adapter: postgresql
-  database: reibot
-  username: postgres
+  database: reibotdev
+  username: tk
   password: Shenanigans87
+  host: localhost
   pool: 5
   timeout: 5000
+  schema_search_path: public
