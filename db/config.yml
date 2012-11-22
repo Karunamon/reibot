@@ -7,3 +7,6 @@ development:
   pool: 5
   timeout: 5000
   schema_search_path: public
+
+production:
+  adapter: postgresql
