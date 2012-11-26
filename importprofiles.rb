@@ -4,7 +4,7 @@ require 'cinch'
 require 'active_record'
 require 'pry'
 require './rb_utils'
-require 'IniParse'
+require 'iniparse'
 require 'yaml'
 
 #Populate database config from the YML
