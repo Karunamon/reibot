@@ -1,9 +1,9 @@
 development:
   adapter: postgresql
   database: reibotdev
-  username: tk
-  password: Shenanigans87
-  host: localhost
+  username: reibot-test
+  password: shenanigans87
+  host: alternia.tkware.info
   pool: 5
   timeout: 5000
   schema_search_path: public
