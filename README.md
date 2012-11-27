@@ -7,13 +7,13 @@ Why Ruby?
 =========
 * mIRC's scripting syntax is very capable, but it is terribly verbose and is completely procedural.
 
-  * Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
+ * Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
 
 
 
 * mIRC has nothing resembling an IDE, all work is done essentially inside a dumb text editor, with a third party DLL loaded for syntax editing. Not terribly fun.
 
-  * RubyMine? NetBeans? Pick your favorite :)
+ * RubyMine? NetBeans? Pick your favorite :)
 
 
 
