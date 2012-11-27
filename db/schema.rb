@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20121026030251) do
 
   create_table "profiles", :force => true do |t|
     t.string   "title",   :limit => 100
-    t.integer  "owner"
+    t.integer  "owner_id"
     t.datetime "timeset"
     t.string   "whoset"
   end
