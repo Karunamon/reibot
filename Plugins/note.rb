@@ -25,7 +25,7 @@ class Memobox
   #Methods#
   def leave_message(m)
     msgarray = without_cmd(m.message)
-    @notes_waiting.push(msgarray[0])
+    @notes_waiting.push(msgarray[0].downcase)
     Note.create(#TODO: Need a way to make this case insensitive so a db besides SQLIte can be used
         :timeset   => (Time.new).ctime,
         :sender    => m.user.nick,
