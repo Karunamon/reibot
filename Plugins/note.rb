@@ -38,12 +38,7 @@ class Memobox
   def check_notes(m)
     if @notes_waiting.grep(/^#{m.user.nick}/i).count > 0
       notescount= Note.where(:recipient => "#{m.user.nick}").count
-      if notescount > 1 then
-        msgword="messages"
-      else
-        msgword="message"
-      end
-      m.reply "I have #{notescount} #{msgword} for you, #{m.user.nick}!"
+      m.reply "I have #{notescount} #{notescount==1 ? 'message' : 'messages'} for you, #{m.user.nick}!"
       retrieve_notes(m)
     end
   end
