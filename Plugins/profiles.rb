@@ -1,6 +1,5 @@
 require 'cinch'
 require 'active_record'
-#require 'bcrypt'
 require_relative '../rb_utils'
 
 class Profiles
@@ -8,10 +7,10 @@ class Profiles
   include RbUtils
   ##Listeners##
 
-  match(/(^\?learn |^\?save |^\?remember |^\?store )/i, :prefix => "", method: :add_profile)
+  match(/(^\?learn |^\?save |^\?remember |^\?store |^\!learn )/i, :prefix => "", method: :add_profile)
   match(/(^\?\? )/i, :prefix => "", method: :query_profile)
   match(/(^\?forget |^\?delete |^\?erase |^\?drop)/i, :prefix => "", method: :delete_profile)
-  match(/^\?detail /i, :prefix => "", method: :detail_profile)
+  #match(/^\?detail /i, :prefix => "", method: :detail_profile) TODO: Add this
 
 
   #Models#
