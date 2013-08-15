@@ -4,9 +4,10 @@ RBReibot - An IRC bot for roleplay channels and more
 RBReibot is a continuation of Reibot, an IRC bot project which was originally written in mIRC Scripting Language.
 
 Why Ruby?
-=========
-* mIRC's scripting syntax is very capable, but it is terribly verbose and is completely procedural.
+---------
 
+* mIRC's scripting syntax is very capable, but it is terribly verbose and is completely procedural.
+  
  * Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
 
 
@@ -22,8 +23,8 @@ Why Ruby?
   * Migrating to Ruby makes the bot truly cross-platform, also allowing us to migrate to Linux at the same time.
 
 
-Features
-========
+Current Features
+----------------
 
 * Note System
 
@@ -48,9 +49,11 @@ The definitions system allows you to store and retrieve data to arbitrary entrie
     <newbie> ?? rules
     <ReiBot> [Rules] Don't whizz on the electric fence!
 
-* Public Channel Commands (in development)
+Planned Features
+-----------------
+* Public Channel Commands
 
-The commands system allows you to have public commands used for managing your channel. Many IRC servers have services packages loaded which provide this functionality for you - but if your favorite server doesn't use services, or if you'd rather not use them, ReiBot will provide channel management functions on parity with Anope services.
+The commands system will allow you to have public commands used for managing your channel. Many IRC servers have services packages loaded which provide this functionality for you - but if your favorite server doesn't use services, or if you'd rather not use them, ReiBot will provide channel management functions on parity with Anope services.
 
     <you> ?topic Welcome to #test - If this were a real channel, more information would be provided here.
     ** ReiBot has changed topic for #test to: Welcome to #test - If this were a real channel, more information would be provided here.
@@ -62,40 +65,38 @@ An authentication system will be provided to make sure random skiddies from abus
 
 What else? The sky is the limit :)
 
-Requirements
-============
+Minimum Requirements
+------------
 
-* Ruby 1.9.2
-* Rails
-* Cinch
-* sqlite3
+* Ruby 1.9.2 (due to regex handling)
+* Bundler (which will handle everything else)
 
-* If you have the Bundler gem installed, you can run
+If you don't have bundler, just do a `gem install bundler`. You want to keep this around, as the requirements
+for the bot will definitely change over time. Once that's done  `cd` into the bot's folder, and issue a
 
-    $bundle install
+`bundle install`
 
- .. and all dependencies will be automatically patched
+.. and all dependencies will be automatically pulled in for you.
 
 Getting Started
-===============
+---------------
 
-* Edit rbreibot.yml to change the bot's name, channels to join, etc. Note that this is a YAML formatted file, whitespace matters! If you get a startup error, try pasting the entire contents of the file into something like https://yaml-online-parser.appspot.com/ to see if the file reads.
+* Edit `rbreibot.yml` to change the bot's name, channels to join, etc. Note that this is a YAML formatted file, whitespace matters! If you get a startup error, try pasting the entire contents of the file into something like https://yaml-online-parser.appspot.com/ to see if the file reads.
 
 If you can't figure it out still, open an issue here and we'll get you sorted out.
 
 * Run `rake db:migrate` to generate the initial database
 
-* Run main.rb to start! ReiBot should join the channel you specified and become available for use.
+* Run `main.rb` to start! ReiBot should join the channel you specified and become available for use.
 
 
 Plugins
-=======
+-------
 
-Plugin documentation will be here later :)
+TODO
 
 
 License
-=======
-* Commercial use: Ask first. I don't want money for this, but I am quite curious as to where Reibot is popping up, if anywhere. You're not allowed to use Reibot for commercial purposes without at least doing this one small thing. Commercial use I define as operating on a server owned or operated by a company you own or work for, or a subsidary of any company you own or work for.
+-------
 
-* Personal use: Creative Commons BY-NC-SA
+MIT
