@@ -1,5 +1,5 @@
-:server: frogbox.es
-:nick: '[Rei|Dev]'
+:server: irc.rizon.net
+:nick: '[Rei|Dev|SomeRandomGuy]'
 :channels:
  - '#TKWare'
 :user: Ayanami
@@ -9,3 +9,4 @@
   - 'Profiles'
   - 'Memobox'
   - 'Isup'
+  - 'Dice'

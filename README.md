@@ -7,20 +7,16 @@ Why Ruby?
 ---------
 
 * mIRC's scripting syntax is very capable, but it is terribly verbose and is completely procedural.
-  
- * Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
 
+Moving to Ruby allows us to redesign the system to be 100% object oriented, and gives us access to some very cool constructs for database work (such as ActiveRecord, used heavily in the Rails ecosystem).
 
+* mIRC has nothing resembling an IDE, all work is done essentially inside a dumb text editor, with an unstable third party DLL loaded for syntax highlighting. Not terribly fun.
 
-* mIRC has nothing resembling an IDE, all work is done essentially inside a dumb text editor, with a third party DLL loaded for syntax editing. Not terribly fun.
-
- * RubyMine? NetBeans? Pick your favorite :)
-
-
+For a proper programming language like Ruby? There's RubyMine, NetBeans, Aptana.. vim with plugins.. pick your favorite :)
 
 * mIRC's stability isn't great. On a virtual machine dedicated to running the program, it would reliably crash given about a week.
 
-  * Migrating to Ruby makes the bot truly cross-platform, also allowing us to migrate to Linux at the same time.
+Migrating to Ruby makes the bot truly cross-platform, also allowing us to migrate to Linux at the same time.
 
 
 Current Features
@@ -49,6 +45,29 @@ The definitions system allows you to store and retrieve data to arbitrary entrie
     <newbie> ?? rules
     <ReiBot> [Rules] Don't whizz on the electric fence!
 
+* Dice Roller
+
+Great for various games. Simply use `?roll (number)d(number)(modifier)`. As an example:
+
+    <you> ?roll 3d6+5
+    <ReiBot> Result: [4, 3, 6] => 13+5 ==> 18!
+
+The modifier can be any mathematical expression using the 4 standard operations and any number. This expression can be as long as you wish, the only restriction is that no parenthesis may be used.
+
+* Website Up Checker
+
+Uses http://isup.me to check if a certain website is up. Really. That's it. Wrote this to scratch a particular itch :)
+
+    <you> ?isum http://tkware.info
+    <Reibot> Just a moment...
+    <Reibot> It's just you! http://tkware.info looks up from here!
+
+
+All Reibot commands will work in private message. More acurately, all events are handled in the context that someone speaks in. Private messages will be responded to in private, and so on.
+
+This applies oddly to things like the note system - if you have notes waiting for you, and you speak in private message to the bot, your notes will be delivered in private, but if you speak
+in public first, they'll be left publicly.
+
 Planned Features
 -----------------
 * Public Channel Commands
@@ -68,20 +87,23 @@ What else? The sky is the limit :)
 Minimum Requirements
 ------------
 
-* Ruby 1.9.2 (due to regex handling)
+* Ruby 1.9.2 or greater (1.8.x has limited regular expression handling and will not work)
 * Bundler (which will handle everything else)
 
 If you don't have bundler, just do a `gem install bundler`. You want to keep this around, as the requirements
-for the bot will definitely change over time. Once that's done  `cd` into the bot's folder, and issue a
+for the bot will definitely change over time. Once that's done `cd` into the bot's folder, and issue a
 
 `bundle install`
 
 .. and all dependencies will be automatically pulled in for you.
 
+
+If you've upgrade and found that things suddenly don't work, try issuing a `bundle upgrade` command.
+
 Getting Started
 ---------------
 
-* Edit `rbreibot.yml` to change the bot's name, channels to join, etc. Note that this is a YAML formatted file, whitespace matters! If you get a startup error, try pasting the entire contents of the file into something like https://yaml-online-parser.appspot.com/ to see if the file reads.
+* Edit `main.yml` to change the bot's name, channels to join, etc. Note that this is a YAML formatted file, whitespace matters! If you get a startup error, try pasting the entire contents of the file into something like https://yaml-online-parser.appspot.com/ to see if the file reads.
 
 If you can't figure it out still, open an issue here and we'll get you sorted out.
 
@@ -90,11 +112,12 @@ If you can't figure it out still, open an issue here and we'll get you sorted ou
 * Run `main.rb` to start! ReiBot should join the channel you specified and become available for use.
 
 
-Plugins
--------
+Public Clouds
+-------------
 
-TODO
+Reibot is very light, and so can be run on most PaaS providers for free. It has been explicitly tested with Heroku.
 
+A Heroku Procfile is included, however since Rails is not used, you're on your own for getting the database migrations done.
 
 License
 -------
