@@ -1,0 +1,8 @@
+config/reibot.yml
+config/plugins.yml
+Plugins/profiles_spreadsheet.rb
+Plugins/donuts_spreadsheet.rb
+.idea/
+*.pid
+*.log
+*.db3

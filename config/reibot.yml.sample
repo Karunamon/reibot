@@ -1,0 +1,16 @@
+:server: irc.example.com
+:nick: 'Reibot'
+:user: Ayanami
+:channels:
+ - '#mychannel1'
+ - '#mychannel2'
+:plugins:
+ :plugins:
+#Note: Class names, not filenames
+  - 'Profiles'
+  - 'Memobox'
+  - 'Isup'
+  - 'Dice'
+  - 'Steamup'
+  - 'Ignorelist'
+  - 'Troutslap'

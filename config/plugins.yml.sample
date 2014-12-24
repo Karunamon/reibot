@@ -1,0 +1,7 @@
+#Plugin specific configuration should go in this file.
+:profiles_config:
+ :override_groups:
+  - :Admin
+  - :Owner
+:memobox:
+  :redis_db_id: 2
