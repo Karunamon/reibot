@@ -9,9 +9,7 @@ gem 'google_drive'
 gem 'redis'
 
 group :development do
-gem 'pry'
-gem 'sqlite3'
-gem 'iniparse'
+ gem 'pry'
 end
 
 group :test do
