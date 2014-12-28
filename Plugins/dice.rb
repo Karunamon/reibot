@@ -10,23 +10,18 @@ class Dice
 
   def format_output(rollset, dicedata)
     result = String.new
-    #Rollset contains an array of arrays
-    #Dicedata contains the original parsed command
-    #Original result var:
-    ##{modified_total}: #{unmodified_total.to_s + rolls}#{modifier}
 
-
-    if dicedata['rolls'] == 1 #If we're just doing one set of rolls, use the old style output.
+    if dicedata['rolls'] == 1 || dicedata['rolls'].nil? #If we're just doing one set of rolls, use the old style output.
       @sum = rollset[0].inject(:+).to_s
-      @modified_sum = eval( "#{@sum} #{dicedata["alter"]}" ) unless dicedata["alter"].empty?
+      @modified_sum = dicedata['alter'].empty?  ? nil : eval( "#{@sum} #{dicedata["alter"]}" )
       #Slightly different output if a modifier was used
       if @modified_sum
-        return "Result: #{rollset[0].to_s} ==> #{@sum + dicedata["alter"]} ===> #{@modified_sum} #{" " + dicedata["name"]}"
+        return "Result: #{rollset[0].to_s} ==> #{@sum}#{dicedata["alter"]} ===> #{@modified_sum} #{dicedata["name"] || ''}"
       else 
-        return "Result: #{rollset[0].to_s} ==> #{@sum}"
+        return "Result: #{rollset[0].to_s} ==> #{@sum} #{dicedata["name"] || ''}"
       end
 
-    else #Use the "condensed" method otherwise:
+    else #Use the new "condensed" method otherwise:
 
       rollset.each do |roll_set| 
         modifier = dicedata['alter']
@@ -89,7 +84,7 @@ class Dice
     result = format_output(outer, dicedata)
 
     debug "Final result: #{result}"
-    m.reply result
+    m.reply result.strip
 
   end
 end
