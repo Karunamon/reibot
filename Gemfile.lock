@@ -112,5 +112,6 @@ DEPENDENCIES
   pry
   redis
   rspec
+  rspec-mocks
   sqlite3
   standalone_migrations!
