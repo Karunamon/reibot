@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-ruby '1.9.3'
 gem 'standalone_migrations', :git => 'http://github.com/thinkerbot/standalone-migrations.git', :branch => 'rails4.0.0'
 gem 'cinch'
 gem 'sqlite3'
