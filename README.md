@@ -1,6 +1,8 @@
 RBReibot - An IRC utility bot for gaming channels
 =================================================
 
+[![Join the chat at https://gitter.im/Karunamon/reibot](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Karunamon/reibot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is continuation of an IRC bot project which was originally written in mIRC Scripting Language. 
 
 Reibot is an all-around utility bot for gaming or roleplay channels. It includes a number of helpful functions such as a dice roller, information retrieval, and so forth.
