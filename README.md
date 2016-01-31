@@ -1,7 +1,9 @@
 RBReibot - An IRC utility bot for gaming channels
 =================================================
 
-[![Join the chat at https://gitter.im/Karunamon/reibot](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Karunamon/reibot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+**DEPRECATED**
+
+RBReibot has been deprecated in favor of AsrielBot. Please see the [AsrielBot](https://github.com/Karunamon/AsrielBot) repository for any future development.
 
 This is continuation of an IRC bot project which was originally written in mIRC Scripting Language. 
 
